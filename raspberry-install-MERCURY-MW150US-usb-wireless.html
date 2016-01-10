@@ -23,21 +23,23 @@
       <section>
 
 <h3>2016.01.10 树莓派搭配水星MW150US USB无线网卡</h3>
-<p>很早就关注树莓派，最近因为偶然机会入手了一个，折腾了一番很快就跑起来了，不过带着网线真是太麻烦了，
-淘宝上推荐的都是EDOP免驱的USB wifi，但我手头有一个水星MW150US的USB网卡，插上可以用，但ping值非常不稳定，
-在5000+ms和十几ms之前浮动，甚至有时候插了没反应，apt-get update和upgrade后还不行，
-在Google上搜，很多人都有这个问题，有的说是电压不够5V，有的说换网卡。
 <p>
-用lsusb看，会发现有个Realtek Semiconductor Corp的设备，其实MW150US用的是Realtek的8188eu的芯片，所以设备是可以被识别的；
+<p>
+很早就关注树莓派，最近因为偶然机会入手了一个，折腾了一番很快就跑起来了，不过带着网线真是太麻烦了，<br>
+淘宝上推荐的都是EDOP免驱的USB wifi，但我手头有一个水星MW150US的USB网卡，插上可以用，但ping值非常不稳定，<br>
+在5000+ms和十几ms之前浮动，甚至有时候插了没反应，apt-get update和upgrade后还不行，<br>
+在Google上搜，很多人都有这个问题，有的说是电压不够5V，有的说换网卡。<br>
+<p>
+用lsusb看，会发现有个Realtek Semiconductor Corp的设备，其实MW150US用的是Realtek的8188eu的芯片，所以设备是可以被识别的；<br>
 再用lsmod看，会发现启动中有一个8188的驱动被加载了；
 <p>
-估计是驱动的问题，去raspberry论坛找啊找，找到一篇神帖：https://www.raspberrypi.org/forums/viewtopic.php?p=462982
+估计是驱动的问题，去raspberry论坛找啊找，找到一篇神帖：https://www.raspberrypi.org/forums/viewtopic.php?p=462982<br>
 虽然帖子里面说的是TP-LINK的牌子，但是芯片组用的也是8188eu，按照步骤安装上驱动重启后，感觉wifi真是太美好了！
 <p>
 我的uname -a是： Linux raspberrypi 4.1.13-v7+ #826 SMP PREEMPT Fri Nov 13 20:19:03 GMT 2015 armv7l GNU/Linux
 <p>
-注意：
-1、仔细看文章，选择匹配自己型号的驱动；
+注意：<br>
+1、仔细看文章，选择匹配自己型号的驱动；<br>
 2、dropboxusercontent.com这个域名被墙，翻墙下载后scp到raspberrypi再安装；
 </p>
 
